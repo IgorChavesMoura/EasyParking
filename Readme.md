@@ -1,6 +1,8 @@
-#Easy Parking
+Easy Parking
+=
 
-##Instalação
+Instalação
+-
 ###Após dar o pull:
 Utilizar o comando npm install para instalar as dependências do nodeJS (importante lembrar que devem estar instalados o nodeJS, npm e o ionic na máquina).
 
