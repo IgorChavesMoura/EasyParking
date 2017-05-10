@@ -32,7 +32,7 @@ export class LoginPage {
 
       );
       this.loginProvider.loginFailEventEmitter.subscribe(
-        error => console.log(error) // Escuta o event emitter do provider para saber se houve erro em uma tentativa de login
+        error => {console.log(error.message);this.showErrorAlert(error);} // Escuta o event emitter do provider para saber se houve erro em uma tentativa de login
       );
   }
   loginWithCredential(){
@@ -53,6 +53,14 @@ export class LoginPage {
       title: user.email,
       subTitle:"Você está logado!",
       buttons: ['OK']
+    });
+    alert.present();
+  }
+  showErrorAlert(error){
+    let alert = this.alertCtrl.create({
+      title:"Erro",
+      subTitle:error.message,
+      buttons:['OK']
     });
     alert.present();
   }
