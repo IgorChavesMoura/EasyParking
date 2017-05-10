@@ -44,6 +44,13 @@ export class LoginProvider {
     .catch(error => this.callbackLoginFail(error));
 
   }
+  loginWithFacebook(){
+    let provider = new firebase.auth.FacebookAuthProvider();
+
+    firebase.auth().signInWithPopup(provider)
+    .then(result => this.callbackLoginSuccess(result))
+    .catch(error => this.callbackLoginFail(error));
+  }
   private callbackStateChange(user){
     this.ngZone.run( () => {
       if(user == null){

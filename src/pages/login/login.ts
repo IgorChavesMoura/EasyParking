@@ -44,6 +44,9 @@ export class LoginPage {
   loginWithGoogle(){
     this.loginProvider.loginWithGoogle();
   }
+  loginWithFacebook(){
+    this.loginProvider.loginWithFacebook();
+  }
   goToRegister(){
     this.navCtrl.push(RegisterPage);
   }
