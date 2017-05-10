@@ -5,12 +5,7 @@ import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { LoginPage } from '../login/login';
 import { AlertController } from 'ionic-angular';
 
-/**
- * Generated class for the Register page.
- *
- * See http://ionicframework.com/docs/components/#navigation for more info
- * on Ionic pages and navigation.
- */
+//Componente responsavel pelo codigo da pagina de registro
 @IonicPage()
 @Component({
   selector: 'page-register',
@@ -20,7 +15,7 @@ export class RegisterPage {
 
   credential:Credential;
 
-  constructor(public navCtrl: NavController, 
+  constructor(public navCtrl: NavController, //Injeta dependencias
               public navParams: NavParams,
               public loginProvider: LoginProvider,
               public alertCtrl: AlertController ) {
@@ -32,7 +27,7 @@ export class RegisterPage {
     
   }
   registerUser(){
-    this.loginProvider.registerUser(this.credential);
+    this.loginProvider.registerUser(this.credential); //Chama o metodo de registrar do provider, usando a credencial do formulado preenchido no template
     this.showAlert();
     this.navCtrl.push(LoginPage);
   }
